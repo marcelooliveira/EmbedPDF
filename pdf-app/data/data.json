@@ -1,38 +1,50 @@
 [
   {
-    "number": 1,
+    "id": 1,
+    "title": "paper 1",
     "price": 124,
     "description": "nonono nonononon nono nnononono",
-    "pic": "/images/01.png"
+    "pic": "/images/01.png",
+    "pdf": "01.pdf"
   },
   {
-    "number": 2,
+    "id": 2,
+    "title": "paper 2",
     "price": 122,
     "description": "nonono nonononon nono nnononono",
-    "pic": "/images/02.png"
+    "pic": "/images/02.png",
+    "pdf": "02.pdf"
   },
   {
-    "number": 3,
+    "id": 3,
+    "title": "paper 3",
     "price": 122,
     "description": "nonono nonononon nono nnononono",
-    "pic": "/images/03.png"
+    "pic": "/images/03.png",
+    "pdf": "03.pdf"
   },
   {
-    "number": 4,
+    "id": 4,
+    "title": "paper 4",
     "price": 101,
     "description": "nonono nonononon nono nnononono",
-    "pic": "/images/04.png"
+    "pic": "/images/04.png",
+    "pdf": "04.pdf"
   },
   {
-    "number": 5,
+    "id": 5,
+    "title": "paper 5",
     "price": 115,
     "description": "nonono nonononon nono nnononono",
-    "pic": "/images/05.png"
+    "pic": "/images/05.png",
+    "pdf": "05.pdf"
   },
   {
-    "number": 6,
+    "id": 6,
+    "title": "paper 6",
     "price": 127,
     "description": "nonono nonononon nono nnononono",
-    "pic": "/images/06.png"
+    "pic": "/images/06.png",
+    "pdf": "06.pdf"
   }
 ]

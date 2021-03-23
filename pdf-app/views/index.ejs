@@ -1,68 +1,45 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>
-    <%= title %>
-  </title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-  <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css">
-</head>
-
-<body>
-  <div>
-    <header>
-      <div class="row">
-        <div class="col-sm-9">
-          <nav class="login-menu">
-            <h3 class="title m-0 p-2"><span class="fa fa-file-pdf-o"></span>
-              &nbsp; PDF Embedding App &nbsp;<span class="fa fa-file-pdf-o"></span></h3>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <main>
-      <link rel="stylesheet" type="text/css" href="../app.css">
-      <div class="container">
-        <div class="center-panel">
-          <h3>PDFs Available</h3>
-          <div class="row">
-
-            <% papers.forEach(function(paper){ %>
-
-              <div id="hits" class="col-xs-12 col-sm-6 col-md-4 p-3 col">
-                <div class="shadow card">
-                  <div
-                    style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;">
-                    <div style="box-sizing: border-box; display: block; max-width: 100%;"><img alt="" aria-hidden="true"
-                        role="presentation" src="<%= paper.pic %>"
-                        style="max-width: 100%; display: block; margin: 0px; border: none; padding: 0px;"></div>
-                        
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title"><span>$<%= paper.price %></span></h5>
-                    <p class="card-text"><b>
-                        <%= paper.description %>
-                      </b></p>
-
-                    <p class="card-text"><span><button type="button"
-                          class="btn btn-primary btn-sm btn btn-primary"><span
-                            class="fa fa-file-pdf-o"></span>&nbsp;Download</button>&nbsp;</span>
-                            
-                    </p>
+  <head>
+    <title>
+      <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css">
+  </head>
+  <body>
+    <div>
+      <header>
+      </header>
+      <main>
+        <div class="container">
+          <div class="center-panel">
+            <h3>PDFs Available</h3>
+            <div class="row">
+              <% papers.forEach(function(paper){ %>
+                <div id="hits" class="col-xs-12 col-sm-6 col-md-4 p-3 col">
+                  <div class="shadow card">
+                      <img class="card-img-top img-estate" src="<%= paper.pic %>"/>
+                    <div class="card-body">
+                      <h5 class="card-title"><span>$<%= paper.price %></span></h5>
+                      <p class="card-text">
+                        <b><%= paper.description %></b>
+                      </p>
+                      <a class="btn btn-sm btn btn-danger" 
+                        target="_blank" href="/paper/<%= paper.id %>">
+                          <span type="button" ></span>
+                          <span class="fa fa-file-pdf-o"></span>&nbsp;Open</button>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-
               <% }); %>
-
+            </div>
           </div>
         </div>
-      </div>
-    </main>
-  </div>
-</body>
-
+      </main>
+    </div>
+  </body>
 </html>
