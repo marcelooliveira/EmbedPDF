@@ -16,14 +16,14 @@
       <main>
         <div class="container">
           <div class="center-panel">
-            <h3>PDFs Available</h3>
+            <h3>White Papers Available</h3>
             <div class="row">
               <% papers.forEach(function(paper){ %>
                 <div id="hits" class="col-xs-12 col-sm-6 col-md-4 p-3 col">
                   <div class="shadow card">
                       <img class="card-img-top img-estate" src="<%= paper.pic %>"/>
                     <div class="card-body">
-                      <h5 class="card-title"><span>$<%= paper.price %></span></h5>
+                      <h5 class="card-title"><span><%= paper.title %></span></h5>
                       <p class="card-text">
                         <b><%= paper.description %></b>
                       </p>
