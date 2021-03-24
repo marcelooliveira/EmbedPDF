@@ -8,7 +8,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var fullWindowRouter = require('./routes/full-window');
 var sizedContainerRouter = require('./routes/sized-container');
-var apiPapersRouter = require('./routes/api-papers');
+var inLineRouter = require('./routes/in-line');
+var lightboxRouter = require('./routes/lightbox');
 
 var app = express();
 
@@ -25,7 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/full-window', fullWindowRouter);
 app.use('/sized-container', sizedContainerRouter);
-app.use('/api-papers', apiPapersRouter);
+app.use('/in-line', inLineRouter);
+app.use('/lightbox', lightboxRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
