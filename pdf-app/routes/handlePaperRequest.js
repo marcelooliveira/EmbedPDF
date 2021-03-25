@@ -4,8 +4,6 @@ function handlePaperRequest(req, res, view) {
   let rawdata = fs.readFileSync('data/data.json');
   let papers = JSON.parse(rawdata);
 
-  console.log('req.body:' + JSON.stringify(req.body));
-
   let paper = papers.filter(p => p.id == parseInt(req.params.id))[0];
   let user = {};
   let authenticated = false;
@@ -27,7 +25,6 @@ function handlePaperRequest(req, res, view) {
       user: user,
       authenticated: authenticated,
       permissions: {
-        canViewPDF: true,
         showDownloadPDF: true,
         showPrintPDF: true,
         showFullScreen: true
