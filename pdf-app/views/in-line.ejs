@@ -6,9 +6,7 @@
     <%= title %>
   </title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-  <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
   <style type="text/css">
     p {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
@@ -23,6 +21,7 @@
       <div class="text-right mr-4">Hello, <%= user.firstName %> <%= user.lastName %></div>
     </header>
     <% } %>
+    
     <main>
       <div class="row">
         <div class="col-sm-3"></div>
@@ -72,14 +71,14 @@
 
             <% if (authenticated) { %>
 
-              <div id="adobe-dc-view" style="height: 360px; width:100%;"></div>
+              <div id="adobe-dc-view" style="width:100%;"></div>
               <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
               <script type="text/javascript">
                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
                   var adobeDCView = new AdobeDC.View({ clientId: "<%= process.env.PDF_EMBED_CLIENT_ID %>", divId: "adobe-dc-view" });
                   adobeDCView.previewFile({
-                    content: { location: { url: "/pdfs/<%= paper.pdf %>" } },
-                    metaData: { fileName: "<%= paper.pdf %>" }
+                    content: { location: { url: "<%= paper.pdf %>" } },
+                    metaData: { fileName: "<%= paper.fileName %>" }
                   }, {
                     embedMode: "IN_LINE",
                     showDownloadPDF: <%= permissions.showDownloadPDF %>,
@@ -97,41 +96,10 @@
                 </p>
                 <p></p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                  et
-                  dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                  ea
-                  commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                  nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                  anim id
-                  est
-                  laborum.</p>
-                <blockquote>
-                  <h3>Nemo enim ipsam voluptatem quia voluptas sit.<br />
-                    aspernatur aut odit aut fugit.</h3>
-                </blockquote>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                  totam rem
-                  aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                  explicabo.
-                </p>
-                <p></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                  et
-                  dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                  ea
-                  commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                  nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                  anim id
-                  est
-                  laborum.</p>
-
-
+                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                  nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                  anim id est laborum.</p>
                 <div class="row">
                   <div class="col-sm-6">
                     <p><i>Other articles you might like</i></p>
@@ -142,18 +110,14 @@
                     <h6>10 Quick Tips About Blogging</h6>
                     <p>SEP 4, 2019</p>
                     <p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
-                      alias
-                      consequatur
-                      aut perferendis doloribus asperiores repellat.</p>
+                      alias consequatur aut perferendis doloribus asperiores repellat.</p>
                     <p>Read More</p>
                   </div>
                   <div class="col-sm-6">
                     <h6>7 Best Examples of Beautiful Blog Design</h6>
                     <p>SEP 8, 2019</p>
                     <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                      consequuntur magni
-                      dolores
-                      eos qui ratione voluptatem sequi nesciunt.</p>
+                      consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
                     <p>Read More</p>
                   </div>
                 </div>
@@ -171,5 +135,4 @@
   </div>
   </div>
 </body>
-
 </html>

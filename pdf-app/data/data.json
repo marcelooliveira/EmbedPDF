@@ -1,38 +1,30 @@
 [
   {
     "id": 1,
-    "title": "paper 1",
+    "title": "Bodea Brochure",
     "pic": "/images/01.png",
-    "pdf": "01.pdf"
+    "pdf": "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea%20Brochure.pdf",
+    "fileName": "Bodea%20Brochure.pdf"
   },
   {
     "id": 2,
-    "title": "paper 2",
+    "title": "Bodea Survey",
     "pic": "/images/02.png",
-    "pdf": "02.pdf"
+    "pdf": "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea%20Survey.pdf",
+    "fileName": "Bodea%20Survey.pdf"
   },
   {
     "id": 3,
-    "title": "paper 3",
+    "title": "Overview",
     "pic": "/images/03.png",
-    "pdf": "03.pdf"
+    "pdf": "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Overview.pdf",
+    "fileName": "Overview.pdf"
   },
   {
     "id": 4,
-    "title": "paper 4",
+    "title": "Summary",
     "pic": "/images/04.png",
-    "pdf": "04.pdf"
-  },
-  {
-    "id": 5,
-    "title": "paper 5",
-    "pic": "/images/05.png",
-    "pdf": "05.pdf"
-  },
-  {
-    "id": 6,
-    "title": "paper 6",
-    "pic": "/images/06.png",
-    "pdf": "06.pdf"
+    "pdf": "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Summary.pdf",
+    "fileName": "Summary.pdf"
   }
 ]

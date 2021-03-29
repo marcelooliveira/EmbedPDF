@@ -6,9 +6,7 @@
     <%= title %>
   </title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-  <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
   <style type="text/css">
     p {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
@@ -77,8 +75,8 @@
                 document.addEventListener("adobe_dc_view_sdk.ready", function () {
                   var adobeDCView = new AdobeDC.View({ clientId: "<%= process.env.PDF_EMBED_CLIENT_ID %>" });
                   adobeDCView.previewFile({
-                    content: { location: { url: "/pdfs/<%= paper.pdf %>" } },
-                    metaData: { fileName: "<%= paper.pdf %>" }
+                    content: { location: { url: "<%= paper.pdf %>" } },
+                    metaData: { fileName: "<%= paper.fileName %>" }
                   }, {
                     embedMode: "LIGHT_BOX",
                     showDownloadPDF: <%= permissions.showDownloadPDF %>,

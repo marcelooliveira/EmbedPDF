@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 
 router.all('/:id', function(req, res, next) {
-  handlePaperRequest(req, res, 'lightbox');
+  handlePaperRequest(req, res, 'light-box');
 });
 
 module.exports = router;

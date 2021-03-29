@@ -6,9 +6,7 @@
     <%= title %>
   </title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-  <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
   <style type="text/css">
     p {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
@@ -17,55 +15,47 @@
 </head>
 
 <body class="m-0">
-  <div>
-    <% if(authenticated) { %>
-    <header class="bg-dark text-white">
-      <div class="text-right mr-4">Hello, <%= user.firstName %> <%= user.lastName %></div>
-    </header>
-    <% } %>
-    <main>
-      <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-          <% if (!authenticated) { %>
-            <form method="POST" class="form-horizontal m-4 bg-light border border-info center">
-              <fieldset class="offset-md-1">
+  <% if(authenticated) { %>
+  <header class="bg-dark text-white">
+    <div class="text-right mr-4">Hello, <%= user.firstName %> <%= user.lastName %></div>
+  </header>
+  <% } %>
+  
+  <% if (!authenticated) { %>
+    <form method="POST" class="form-horizontal m-4 bg-light border border-info center">
+      <fieldset class="offset-md-1">
 
-                <legend>Submit your info to access the whitepaper</legend>
+        <legend>Submit your info to access the whitepaper</legend>
 
-                <div class="form-group">
-                  <label class="col-md-3 control-label" for="firstName">First name</label>
-                  <input class="col-md-6" id="firstName" name="firstName" type="text" class="form-control input-md" />
-                </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label" for="firstName">First name</label>
+          <input class="col-md-6" id="firstName" name="firstName" type="text" class="form-control input-md" />
+        </div>
 
-                <div class="form-group">
-                  <label class="col-md-3 control-label" for="lastName">Last name</label>
-                  <input class="col-md-6" id="lastName" name="lastName" type="text" class="form-control input-md" />
-                </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label" for="lastName">Last name</label>
+          <input class="col-md-6" id="lastName" name="lastName" type="text" class="form-control input-md" />
+        </div>
 
-                <div class="form-group">
-                  <label class="col-md-3 control-label" for="jobTitle">Job title</label>
-                  <input class="col-md-6" id="jobTitle" name="jobTitle" type="text" class="form-control input-md" />
-                </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label" for="jobTitle">Job title</label>
+          <input class="col-md-6" id="jobTitle" name="jobTitle" type="text" class="form-control input-md" />
+        </div>
 
-                <div class="form-group">
-                  <label class="col-md-3 control-label" for="email">Email</label>
-                  <input class="col-md-6" id="email" name="email" type="email" class="form-control input-md" />
-                </div>
-                
-                <div class="form-group">
-                  <label class="col-md-6"></label>
-                  <button type="submit" class="btn btn-sm btn btn-primary col-md-3">Submit</button>
-                </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label" for="email">Email</label>
+          <input class="col-md-6" id="email" name="email" type="email" class="form-control input-md" />
+        </div>
+        
+        <div class="form-group">
+          <label class="col-md-6"></label>
+          <button type="submit" class="btn btn-sm btn btn-primary col-md-3">Submit</button>
+        </div>
 
-              </fieldset>
-            </form>
-            <% } %>
+      </fieldset>
+    </form>
+  <% } %>
 
-          </div>
-        </main>
-      </div>
-    </div>
   <% if (authenticated) { %>
 
     <div id="adobe-dc-view"></div>
@@ -74,8 +64,8 @@
       document.addEventListener("adobe_dc_view_sdk.ready", function () {
         var adobeDCView = new AdobeDC.View({ clientId: "<%= process.env.PDF_EMBED_CLIENT_ID %>", divId: "adobe-dc-view" });
         adobeDCView.previewFile({
-          content: { location: { url: "/pdfs/<%= paper.pdf %>" } },
-          metaData: { fileName: "<%= paper.pdf %>" }
+          content: { location: { url: "<%= paper.pdf %>" } },
+          metaData: { fileName: "<%= paper.fileName %>" }
         }, {
           showDownloadPDF: <%= permissions.showDownloadPDF %>,
           showPrintPDF: <%= permissions.showPrintPDF %>,
@@ -85,5 +75,4 @@
 
   <% } %>
 </body>
-
 </html>
