@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+  <link rel='stylesheet' href='/css/font-awesome.min.css' />
+</head>
+
+<body>
+  <div>
+    <main>
+      <div class="container">
+        <div class="center-panel">
+          <h3>White Papers Available</h3>
+          <div class="row">
+          
+            <% papers.forEach(function(paper){ %>
+
+              <div id="hits" class="col-xs-12 col-sm-3 col-md-3 p-3 col">
+                <div class="shadow card">
+                  <img alt="" aria-hidden="true"
+                    role="presentation" src="<%= paper.pic %>">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <span>
+                        <%= paper.title %>
+                      </span>
+                    </h5>
+                    <p>
+                      <a class="btn btn-sm btn btn-danger" target="_blank" href="/sized-container/<%= paper.id %>">
+                        <span type="button"></span>
+                        <span class="fa fa-file-pdf-o"></span>&nbsp;Sized Container</button>
+                      </a>
+                    </p>
+                    <p>
+                      <a class="btn btn-sm btn btn-danger" target="_blank" href="/in-line/<%= paper.id %>">
+                        <span type="button"></span>
+                        <span class="fa fa-file-pdf-o"></span>&nbsp;In-Line</button>
+                      </a>
+                    </p>
+                    <p>
+                      <a class="btn btn-sm btn btn-danger" target="_blank" href="/full-window/<%= paper.id %>">
+                        <span type="button"></span>
+                        <span class="fa fa-file-pdf-o"></span>&nbsp;Full Window</button>
+                      </a>
+                    </p>
+                    <p>
+                      <a class="btn btn-sm btn btn-danger" target="_blank" href="/light-box/<%= paper.id %>">
+                        <span type="button"></span>
+                        <span class="fa fa-file-pdf-o"></span>&nbsp;Light Box</button>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <% }); %>
+              
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

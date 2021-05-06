@@ -6,8 +6,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var sizedContainerRouter = require('./routes/sized-container');
 var inLineRouter = require('./routes/in-line');
-var usersRouter = require('./routes/users');
+var fullWindowRouter = require('./routes/full-window');
+var lightBoxRouter = require('./routes/light-box');
 
 var app = express();
 
@@ -24,8 +26,10 @@ app.use(express.static(path.join(__dirname, '/node_modules/bootstrap/dist')));
 app.use(express.static(path.join(__dirname, '/node_modules/font-awesome')));
 
 app.use('/', indexRouter);
+app.use('/sized-container', sizedContainerRouter);
 app.use('/in-line', inLineRouter);
-app.use('/users', usersRouter);
+app.use('/full-window', fullWindowRouter);
+app.use('/light-box', lightBoxRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
